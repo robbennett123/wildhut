@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.describe("Navigation from 'Our Saunas'", () => {
-test('To OHK', async ({ page }) => {
+test('To the  saunas', async ({ page }) => {
   await page.goto('https://www.wildhut.com/');
 
   //accept cookies
