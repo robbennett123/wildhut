@@ -8,7 +8,7 @@ test('basic purchase flow', async ({ page, context }) => {
   await page.goto('https://www.ikea.com/gb/en/');
   //click accept cookies
   await page.getByRole('button', { name: 'Accept all' }).click();
-
+await expect(page).toHaveTitle('Luxury Outdoor Home Garden Saunas in the UK | Wildhut');
   await expect(page).toHaveTitle('Affordable Furniture and Home Inspiration - IKEA UK');
   await expect(page.getByRole('link', { name: 'IKEA Home' })).toBeVisible();
   await page.getByRole('link', { name: 'IKEA Home' }).click();

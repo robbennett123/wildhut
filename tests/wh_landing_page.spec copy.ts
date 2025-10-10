@@ -3,7 +3,14 @@ import { test, expect } from '@playwright/test';
 test.describe("Wildhut Basic Page Layouts", () => {
 test('Landing Page Layout', async ({ page }) => {
   await page.goto('https://www.wildhut.com/');
+
+  //accept cookies
   await page.getByRole('button', { name: 'Accept' }).click();
+
+  //check title
+  await expect(page).toHaveTitle('Luxury Outdoor Home Garden Saunas in the UK | Wildhut');
+
+  //check key elements on page
   await expect(page.locator('#comp-mcafhfrl_r_comp-m8dbj9xt0').getByRole('link', { name: 'OUR SAUNAS' })).toBeVisible();
   await expect(page.locator('#comp-mcafhfrl_r_comp-m8dbj9xt0label')).toContainText('OUR SAUNAS');
   await expect(page.getByRole('link', { name: 'EXPLORE' })).toBeVisible();
@@ -29,4 +36,8 @@ test('Landing Page Layout', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Much has been made of the' })).toBeVisible();
   await expect(page.locator('#PAGE_SECTIONSvg67b')).toContainText('Much has been made of the health benefits of sauna bathing, and with good reason. Physically, nothing is more invigorating than a deep, healthy sweat every day. Tension fades. Muscles unwind. Mentally, we emerge relaxed, revived and ready for whatever life may bring. We at Wildhut have designed a hand-crafted, fully customisable, range of luxury outdoor saunas for your home or business. We operate from our HQ in the southeast of the UK where we\'ve designed our high end Wildhut saunas to last, to function beautifully and to complement any environment. Built by highly skilled craftsmen in Estonia and then shipped internationally, our beautiful garden saunas fuse form and function to set new standards in comfort, sustainability and luxury.');
 });
+});
+
+test.describe("Validate landing page images", () => {
+
 });
