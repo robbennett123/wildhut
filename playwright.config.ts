@@ -12,6 +12,11 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+   // Configure one or more reporters
+  reporter: [
+    ['list'],            // Outputs a list of results to the console
+    ['html', { open: 'never' }], // Generates the interactive HTML report
+  ],
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -76,4 +81,7 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
+
+
 });
+
