@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/test';
 
 test.describe("Navigation from 'Our Saunas'", () => {
+
+test.beforeEach(async({ page }) => {
+ await page.goto('https://www.wildhut.com/');
+});
 test('To the  saunas', async ({ page }) => {
-  await page.goto('https://www.wildhut.com/');
-
-  //accept cookies
-//await page.getByRole('button', { name: 'Accept' }).click();
-
+ 
+//accept cookies
 await page.context().addCookies([
   {
     name: 'consent-policy',
