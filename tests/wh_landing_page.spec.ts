@@ -2,10 +2,8 @@ import { test, expect } from '@playwright/test';
 
 test.describe("Wildhut Basic Page Layouts", () => {
 test('Landing Page Layout', async ({ page }) => {
-  await page.goto('https://www.wildhut.com/');
 
   //accept cookies
- // await page.getByRole('button', { name: 'Accept' }).click();
 
  await page.context().addCookies([
   {
@@ -18,6 +16,7 @@ test('Landing Page Layout', async ({ page }) => {
     sameSite: 'Lax'
   },
 ]);
+  await page.goto('https://www.wildhut.com/');
 
   //check title
   await expect(page).toHaveTitle('Luxury Outdoor Home Garden Saunas in the UK | Wildhut');
