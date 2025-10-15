@@ -39,10 +39,12 @@ test.describe("Navigation from 'Explore'", () => {
   await page.locator('nav').getByRole('link', { name: 'EXPLORE', exact: true }).first().hover();
   await page.getByRole('link', { name: 'Features' }).click();
   //Trying to see if 'THE WILDHUT DIFFERENCE' is scrolled to be visible but not working
-  await expect.soft(page.getByLabel('main content').getByRole('heading')).toContainText('THE WILDHUT DIFFERENCE');
+  await expect.soft(page.getByLabel('main content').getByRole('heading', { name: 'THE WILDHUT DIFFERENCE' })).toBeVisible();
+ });
 
-  
+
+
 
  });
 
-});
+
