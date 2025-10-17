@@ -42,9 +42,4 @@ test.describe("Navigation from 'Explore'", () => {
   await expect.soft(page.getByLabel('main content').getByRole('heading', { name: 'THE WILDHUT DIFFERENCE' })).toBeVisible();
  });
 
-
-
-
  });
-
-
