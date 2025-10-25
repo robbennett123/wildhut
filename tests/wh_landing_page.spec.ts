@@ -34,7 +34,7 @@ test('Landing Page Layout', async ({ page }) => {
   await expect(page.locator('#comp-mcafhfrl_r_comp-m8dbj9xt4label')).toContainText('ENQUIRE');
   await expect(page.getByRole('link', { name: 'SHOP' })).toBeVisible();
   await expect(page.locator('#comp-mcafhfrl_r_comp-m8dbj9xt5label')).toContainText('SHOP');
-  await expect(page.getByRole('link', { name: 'Wildhut log -lugury outdoor' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Wildhut logo - luxury outdoor sauna manufacturer' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'LinkedIn' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Facebook' })).toBeVisible();
   await expect(page.getByLabel('Instagram', { exact: true })).toBeVisible();
