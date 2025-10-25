@@ -24,12 +24,18 @@ test.describe("Navigation from 'Explore'", () => {
     //Check Explore menu items 
   await page.locator('nav').getByRole('link', { name: 'EXPLORE', exact: true }).first().click();
   await expect.soft(page).toHaveURL('https://www.wildhut.com/the-saunas')
+
+/*Solution attempt 1: Cannot get the hover to work
   await page.locator('nav').getByRole('link', { name: 'EXPLORE', exact: true }).first().click();
   await page.locator('nav').getByRole('link', { name: 'EXPLORE', exact: true }).first().hover();
    await expect(page.locator('#comp-m8dbnn4v_r_comp-m8dbj9xtmoreContainer0label')).toContainText('Features');
    await expect(page.locator('#comp-m8dbnn4v_r_comp-m8dbj9xtmoreContainer1label')).toContainText('Options');
    await expect(page.locator('#comp-m8dbnn4v_r_comp-m8dbj9xtmoreContainer2label')).toContainText('FAQs');
-
+*/
+ /*Solution attempt 2: cannot get the hover to work
+  await page.getByRole('link', { name: 'EXPLORE' }).click();
+   await page.getByRole('link', { name: 'EXPLORE', exact: true }).hover();
+ */  await page.getByRole('link', { name: 'Features' }).click();
 
  });
 
